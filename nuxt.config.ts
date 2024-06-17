@@ -4,7 +4,16 @@ export default defineNuxtConfig({
   typescript: {
     typeCheck: true,
   },
-  css: ['bootstrap/dist/css/bootstrap.min.css', '~/assets/scss/global.scss'],
+  css: ['~/assets/scss/bootstrap.scss', '~/assets/scss/global.scss'],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@import "~/assets/scss/_variables.scss";',
+        },
+      },
+    },
+  },
   app: {
     head: {
       charset: 'utf-8',
