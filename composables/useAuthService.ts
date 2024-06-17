@@ -48,7 +48,7 @@ const useAuthService = () => {
     return payload;
   };
 
-  const veriyToken = async () => {
+  const verifyToken = async () => {
     const { data, error } = await useCustomFetch('/api/me');
 
     const payload = data as VerifyTokenPayload | null;
@@ -78,7 +78,7 @@ const useAuthService = () => {
   return {
     signin,
     signup,
-    veriyToken,
+    verifyToken,
     logout,
   };
 };

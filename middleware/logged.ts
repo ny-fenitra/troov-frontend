@@ -10,7 +10,7 @@ const loggedMiddleware = defineNuxtRouteMiddleware(async () => {
       return true;
     }
 
-    const { data } = await useAuthService().veriyToken();
+    const { data } = await useAuthService().verifyToken();
 
     if (data?.success) {
       return true;
