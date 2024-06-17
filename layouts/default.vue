@@ -1,10 +1,8 @@
 <template>
-  <div>
-    Default
+  <div class="layout default-layout d-flex flex-column flex-md-row">
+    <Aside />
     <slot />
   </div>
 </template>
 
-<script setup lang="ts"></script>
-
-<style scoped></style>
+<style scoped lang="scss"></style>

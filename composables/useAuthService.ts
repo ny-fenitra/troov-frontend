@@ -1,9 +1,11 @@
 import useAuthStore from '~/stores/auth';
 import useGlobalStore from '~/stores/global';
-import type { VerifyTokenPayload } from '~/utils/models';
+import type { LogoutTokenPayload, VerifyTokenPayload } from '~/utils/models';
 
 const useAuthService = () => {
-  const { user, accessToken } = storeToRefs(useAuthStore());
+  const authStore = useAuthStore();
+  const { user, accessToken } = storeToRefs(authStore);
+  const { resetCredentials } = authStore;
   const { isLogged } = storeToRefs(useGlobalStore());
 
   const signin = async (body: { email: string; password: string }) => {
@@ -59,10 +61,25 @@ const useAuthService = () => {
     return { data: payload, error };
   };
 
+  const logout = async () => {
+    const { data, error } = await useCustomFetch('/api/logout', {
+      method: 'POST',
+    });
+
+    const payload = data as LogoutTokenPayload | null;
+
+    if (payload?.success) {
+      resetCredentials();
+    }
+
+    return { data: payload, error };
+  };
+
   return {
     signin,
     signup,
     veriyToken,
+    logout,
   };
 };
 

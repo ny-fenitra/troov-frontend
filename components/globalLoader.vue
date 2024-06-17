@@ -11,5 +11,6 @@
   display: flex;
   position: fixed;
   background-color: $secondary;
+  z-index: 999;
 }
 </style>
