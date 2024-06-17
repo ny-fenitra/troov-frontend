@@ -1,3 +1,9 @@
 <template>
   <div>dashboard</div>
 </template>
+
+<script setup lang="ts">
+definePageMeta({
+  middleware: ['logged'],
+});
+</script>
