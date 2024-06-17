@@ -19,5 +19,6 @@ module.exports = {
       },
     ],
     'no-console': 0,
+    'vue/require-default-prop': 0,
   },
 };
