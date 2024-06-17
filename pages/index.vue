@@ -1,3 +1,3 @@
 <script setup lang="ts">
-await navigateTo({ name: 'auth' });
+await navigateTo({ name: 'dashboard' });
 </script>

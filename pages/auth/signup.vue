@@ -47,8 +47,6 @@
 </template>
 
 <script setup lang="ts">
-definePageMeta({ layout: 'auth' });
-
 const firstname = useState('firstname', () => '');
 const lastname = useState('lastname', () => '');
 const email = useState('email', () => '');
@@ -117,7 +115,8 @@ const signup = async () => {
     });
 
     if (error) {
-      errors.value = error;
+      password.value = '';
+      confirmPassword.value = '';
     }
   }
 

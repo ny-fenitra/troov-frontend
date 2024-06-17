@@ -25,8 +25,6 @@
 </template>
 
 <script setup lang="ts">
-definePageMeta({ layout: 'auth' });
-
 const email = useState('email', () => '');
 const password = useState('password', () => '');
 
