@@ -26,4 +26,5 @@ export default defineNuxtConfig({
       baseURL: process.env.API_BASE_URL || 'http://localhost:8080',
     },
   },
+  modules: ['@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt'],
 });
