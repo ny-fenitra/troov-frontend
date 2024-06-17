@@ -10,7 +10,7 @@ const useCustomFetch = async (url: string, options?: any) => {
   const { resetCredentials } = authStore;
 
   try {
-    const data = await $fetch(url, {
+    const data: any = await $fetch(url, {
       baseURL: config.public.baseURL,
       ...options,
       headers: {
@@ -21,6 +21,10 @@ const useCustomFetch = async (url: string, options?: any) => {
       },
       credentials: 'include',
     });
+
+    if (data?.msg) {
+      toast.success(data.msg);
+    }
 
     return { data, error: null };
   } catch (error: any) {
