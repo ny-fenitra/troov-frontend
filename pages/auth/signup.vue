@@ -38,7 +38,7 @@
       name="confirm-password"
       :required="true"
     />
-    <SubmitButton class="w-100" :loading="isLoading">Sign up</SubmitButton>
+    <SubmitButton class="w-100 mb-4" :loading="isLoading">Sign up</SubmitButton>
     <div>
       Already have an account?
       <router-link :to="{ name: 'auth-signin' }">Sign in</router-link>

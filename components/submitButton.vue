@@ -1,7 +1,7 @@
 <template>
   <button
     ref="btn"
-    class="btn btn-primary mb-4"
+    class="btn btn-primary"
     :type="type ?? 'submit'"
     :disabled="disabled || loading"
   >

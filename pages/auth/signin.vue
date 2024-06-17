@@ -16,7 +16,7 @@
       name="password"
       :required="true"
     />
-    <SubmitButton class="w-100" :loading="isLoading">Sign in</SubmitButton>
+    <SubmitButton class="w-100 mb-4" :loading="isLoading">Sign in</SubmitButton>
     <div>
       Don't have an account?
       <router-link :to="{ name: 'auth-signup' }">Sign up</router-link>
