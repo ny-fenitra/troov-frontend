@@ -1,5 +1,5 @@
 <template>
-  <main :key="route.fullPath" class="main d-flex flex-column">
+  <main :key="route.fullPath" class="main d-flex flex-column fit-content">
     <Suspense @resolve="resolve">
       <NuxtPage />
 
@@ -29,7 +29,6 @@ const resolve = () => {
 <style lang="scss" scoped>
 .main {
   background-color: $secondary;
-  flex: 1;
   padding: 20px;
 }
 </style>
