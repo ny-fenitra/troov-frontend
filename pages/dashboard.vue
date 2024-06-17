@@ -1,9 +1,19 @@
 <template>
-  <div>dashboard</div>
+  <Suspense @resolve="resolve">
+    <NuxtPage />
+  </Suspense>
 </template>
 
 <script setup lang="ts">
+import useGlobalStore from '../stores/global';
+
 definePageMeta({
   middleware: ['logged'],
 });
+
+const { globalLoading } = storeToRefs(useGlobalStore());
+
+const resolve = () => {
+  globalLoading.value = false;
+};
 </script>

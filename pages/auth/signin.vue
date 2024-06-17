@@ -25,6 +25,10 @@
 </template>
 
 <script setup lang="ts">
+import useGlobalStore from '~/stores/global';
+
+const { globalLoading } = storeToRefs(useGlobalStore());
+
 const email = useState('email', () => '');
 const password = useState('password', () => '');
 
@@ -61,8 +65,12 @@ const signin = async () => {
       password: password.value,
     });
 
-    if (error) {
-      password.value = '';
+    password.value = '';
+
+    if (!error) {
+      email.value = '';
+
+      globalLoading.value = true;
     }
   }
 

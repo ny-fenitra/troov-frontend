@@ -47,6 +47,10 @@
 </template>
 
 <script setup lang="ts">
+import useGlobalStore from '~/stores/global';
+
+const { globalLoading } = storeToRefs(useGlobalStore());
+
 const firstname = useState('firstname', () => '');
 const lastname = useState('lastname', () => '');
 const email = useState('email', () => '');
@@ -114,9 +118,15 @@ const signup = async () => {
       confirmPassword: confirmPassword.value,
     });
 
-    if (error) {
-      password.value = '';
-      confirmPassword.value = '';
+    password.value = '';
+    confirmPassword.value = '';
+
+    if (!error) {
+      email.value = '';
+      lastname.value = '';
+      firstname.value = '';
+
+      globalLoading.value = true;
     }
   }
 
