@@ -1,6 +1,6 @@
 import useAuthStore from '~/stores/auth';
 import useGlobalStore from '~/stores/global';
-import type { LogoutTokenPayload, VerifyTokenPayload } from '~/utils/models';
+import type { Payload, VerifyTokenPayload } from '~/utils/models';
 
 const useAuthService = () => {
   const authStore = useAuthStore();
@@ -66,7 +66,7 @@ const useAuthService = () => {
       method: 'POST',
     });
 
-    const payload = data as LogoutTokenPayload | null;
+    const payload = data as Payload | null;
 
     if (payload?.success) {
       resetCredentials();

@@ -31,7 +31,7 @@ export interface VerifyTokenPayload {
   user: User;
 }
 
-export interface LogoutTokenPayload {
+export interface Payload {
   success: boolean;
   msg: string;
 }
