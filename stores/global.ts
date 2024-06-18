@@ -1,7 +1,8 @@
 import { defineStore } from 'pinia';
 
 const useGlobalStore = defineStore('global', () => {
-  const isLogged = useState('logged', () => false);
+  const isLogged = useState('isLogged', () => false);
+  const globalLoading = useState('globalLoading', () => true);
 
   watch(isLogged, () => {
     if (!isLogged.value) {
@@ -11,7 +12,7 @@ const useGlobalStore = defineStore('global', () => {
     }
   });
 
-  return { isLogged };
+  return { isLogged, globalLoading };
 });
 
 export default useGlobalStore;

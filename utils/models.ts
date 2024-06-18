@@ -20,6 +20,25 @@ export interface User {
   role: RoleEnum;
 }
 
+export interface UserCriteria {
+  firstname: string;
+  lastname: string;
+  email: string;
+  password?: string;
+  role: RoleEnum;
+}
+
+export interface ObjectInterface {
+  _id: string;
+  name: string;
+  description: string;
+}
+
+export interface ObjectCriteria {
+  name: string;
+  description: string;
+}
+
 export interface AuthPayload {
   success: boolean;
   user: User;
@@ -29,4 +48,22 @@ export interface AuthPayload {
 export interface VerifyTokenPayload {
   success: boolean;
   user: User;
+}
+
+export interface Payload {
+  success: boolean;
+  msg: string;
+}
+
+export interface Paginate<T> {
+  rows: T[];
+  currentPage: number | null;
+  totalPages: number | null;
+  limit: number | null;
+  total: number | null;
+}
+
+export interface Single<T> {
+  item: T;
+  success: boolean;
 }

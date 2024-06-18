@@ -10,7 +10,7 @@ const guestMiddleware = defineNuxtRouteMiddleware(async () => {
       return navigateTo({ name: 'dashboard' });
     }
 
-    const { data } = await useAuthService().veriyToken();
+    const { data } = await useAuthService().verifyToken();
 
     if (data?.success) {
       return navigateTo({ name: 'dashboard' });

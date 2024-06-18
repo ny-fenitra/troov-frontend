@@ -16,7 +16,7 @@
       name="password"
       :required="true"
     />
-    <SubmitButton class="w-100" :loading="isLoading">Sign in</SubmitButton>
+    <SubmitButton class="w-100 mb-4" :loading="isLoading">Sign in</SubmitButton>
     <div>
       Don't have an account?
       <router-link :to="{ name: 'auth-signup' }">Sign up</router-link>
@@ -25,6 +25,10 @@
 </template>
 
 <script setup lang="ts">
+import useGlobalStore from '~/stores/global';
+
+const { globalLoading } = storeToRefs(useGlobalStore());
+
 const email = useState('email', () => '');
 const password = useState('password', () => '');
 
@@ -61,8 +65,12 @@ const signin = async () => {
       password: password.value,
     });
 
-    if (error) {
-      password.value = '';
+    password.value = '';
+
+    if (!error) {
+      email.value = '';
+
+      globalLoading.value = true;
     }
   }
 
