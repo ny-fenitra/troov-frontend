@@ -1,5 +1,5 @@
 <template>
-  <div class="datatable fit-content d-flex flex-column">
+  <div class="datatable fit-content d-flex flex-column gap-4">
     <div class="scroll-content">
       <table class="table">
         <thead>

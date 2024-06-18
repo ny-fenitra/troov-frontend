@@ -18,8 +18,6 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, withDefaults, onMounted } from 'vue';
-
 withDefaults(
   defineProps<{
     loading?: boolean;
