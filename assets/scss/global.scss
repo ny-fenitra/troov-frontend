@@ -5,11 +5,49 @@
 }
 
 html {
-  width: 100%;
-  height: 100%;
+  font-size: 14px;
 }
 
 body {
   font-family: 'Nunito', sans-serif;
-  background-color: #1c1b22;
+  background-color: $bg-color;
+  color: white;
+}
+
+.layout {
+  width: 100%;
+  height: 100vh;
+}
+
+.invalid-feedback {
+  display: block;
+}
+
+.form-label.required {
+  &::after {
+    content: ' *';
+    color: #dd5353;
+  }
+}
+
+.scroll-content {
+  flex: 1;
+  overflow: auto;
+}
+
+.fit-content {
+  flex: 1;
+  overflow: hidden;
+}
+
+.modal-content {
+  background-color: $secondary;
+
+  .modal-header {
+    border-bottom: 1px solid $border-dark;
+  }
+
+  .modal-footer {
+    border-top: 1px solid $border-dark;
+  }
 }
