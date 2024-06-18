@@ -28,6 +28,17 @@ export interface UserCriteria {
   role: RoleEnum;
 }
 
+export interface ObjectInterface {
+  _id: string;
+  name: string;
+  description: string;
+}
+
+export interface ObjectCriteria {
+  name: string;
+  description: string;
+}
+
 export interface AuthPayload {
   success: boolean;
   user: User;
